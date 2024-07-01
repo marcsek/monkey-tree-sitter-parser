@@ -1,0 +1,95 @@
+==================
+Return statements
+==================
+
+return 1;
+
+---
+
+(source_file
+  (return_statement (number)))
+
+==================
+Let statements
+==================
+
+let a = 10;
+
+---
+
+(source_file
+  (let_statement
+  (identifier)
+  (number)))
+
+==================
+Function expression
+==================
+
+fn(a, b, c) {
+  return 1;
+}
+
+---
+
+(source_file
+  (expression_statement
+    (function_declaration
+      (parameters
+        (identifier)
+        (identifier)
+        (identifier))
+      (block
+        (return_statement
+          (number))))))
+
+==================
+If expression
+==================
+
+if(1) {
+  return 2;
+}
+
+if(1) {
+  return 2;
+} else {
+  return 3
+}
+
+---
+
+(source_file
+  (expression_statement
+    (if_expression
+      (condition
+        (number))
+      (block
+        (return_statement
+          (number)))))
+
+  (expression_statement
+    (if_expression
+      (condition
+        (number))
+      (block
+        (return_statement
+          (number)))
+      (block
+        (return_statement
+          (number))))))
+
+==================
+True/False expression
+==================
+
+true;
+false;
+
+---
+
+(source_file
+  (expression_statement
+  (true))
+  (expression_statement
+  (false)))
