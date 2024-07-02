@@ -1,6 +1,6 @@
 let a = fn(a, b, c) {
   return 1;
-}
+ }
 
 if (a) {
   return true;
@@ -28,6 +28,9 @@ a + b < a * c
 [1]
 [1, 2]
 let arr = [1, 2, 3]
+
+len(arr)
+first(arr)
 
 {}
 {1:2}

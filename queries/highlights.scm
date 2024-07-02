@@ -14,9 +14,10 @@
 (identifier) @variable
 (string) @string
 
-(parameters (identifier) @variable.parameter)
-(call (identifier) @function.call)
-
+(parameter_list (identifier) @variable.parameter)
+(call function:(identifier) @function.call)
+((call function:(identifier) @function.builtin)
+(#match? @function.builtin "^puts|len|first|last|rest|push$"))
 
 ; Special
 ["(" ")" "{" "}" "[" "]"] @punctuation.bracket
